@@ -79,6 +79,7 @@ h5 {
 
 }
 
+
 p {
   font-size: 14px;
   color: #333;
@@ -146,6 +147,10 @@ a {
   flex-direction: column;
   flex-wrap: nowrap;
   padding: 10px;
+}
+.flex-item a {
+  display: inline;
+  color: #fff;
 }
 
 .center-content {

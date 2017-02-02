@@ -2,15 +2,15 @@ var bio = {
 	"name": "Roman Firsov",
 	"role": "Front-end developer",
 	"contacts": {
-		"mobile": "555-555-555",
+		"skype": "Roman Firsov",
 		"email": "froma2015@gmail.com",
-		"github": "rfirsov",
-		"linkedin": "roman-firsov",
-		"location": "Kryvyi Rih"
+		"github": "https://github.com/Rfirsov",
+		"linkedin": "https://www.linkedin.com/in/roman-firsov",
+		"location": "Kryvyi Rih, Ukraine"
 	},
 	"welcomeMessage": "Hello, I want to be a programmer",
-	"skills": ["HTML", "CSS", "Javascript", "jQuery"],
-	"biopic": "../images/bio.jpg"
+	"skills": ["HTML", "CSS", "Javascript", "jQuery", "Git"],
+	"biopic": "images/bio.jpg"
 }
 
 var education = {
@@ -21,7 +21,7 @@ var education = {
 		"degree": "BA",
 		"majors": ["Comp sciense"],
 		"dates": 2014,
-		"url": "http://google.com"
+		"url": "http://kdpu.edu.ua"
 	},
 	{
 		"name": "Kryvyi Rih National University",
@@ -29,7 +29,7 @@ var education = {
 		"degree": "Masters",
 		"majors": ["Comp sciense"],
 		"dates": 2015,
-		"url": "http://google.com"
+		"url": "http://kdpu.edu.ua"
 	}
 	],
 
@@ -48,7 +48,7 @@ var work = {
 	{
 		"employer": "hospital",
 		"title": "system administrator",
-		"dates": "feb 20-16 - oct 2016",
+		"dates": "feb 2016 - oct 2016",
 		"description": "I am  install and upgrade computer components and software."
 	}]
 }
@@ -56,10 +56,11 @@ var work = {
 var projects = {
 	"projects": [
 	{
-		"title": "Sample project 1",
+		"title": "Acnostria site",
 		"dates": "2016",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit distinctio deleniti consequatur saepe illum doloremque ex harum repellat voluptate aut unde maxime labore tempore, similique, iusto voluptatem ipsam, quidem eaque.",
-		"images": "../images/197x148.gif"
+		"description": "",
+		"images": "images/acnostria-site.jpg",
+		"link": "http://e-buy.16mb.com/projects"
 
 	}]
 }
@@ -71,10 +72,10 @@ var formattedName = HTMLheaderName.replace("%data%", bio.name),
 	formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage),
 	formattedPhoto = HTMLbioPic.replace("%data%", bio.biopic);
 
-var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile),
-	formattedEmail = HTMLemail.replace("%data%", bio.contacts.email),
-	formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github),
-	formattedLinkedin = HTMLLinkedin.replace("%data%", bio.contacts.linkedin)
+var formattedSkype = HTMLskype.replace("%data%", bio.contacts.skype),
+	formattedEmail = HTMLemail.replace("%data%", "<a href=\"mailto:" + bio.contacts.email + "\">" + bio.contacts.email + "</a>"),
+	formattedGithub = HTMLgithub.replace("%data%", "<a href=\"" + bio.contacts.github + "\" target=\"_blank\">" + "Rfirsov" + "</a>"),
+	formattedLinkedin = HTMLLinkedin.replace("%data%", "<a href=\"" + bio.contacts.linkedin + "\" target=\"_blank\">" + "roman-firsov" + "</a>"),
 	formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 
 $("#header").prepend(formattedRole);		
@@ -84,7 +85,7 @@ $("#header").append(formattedPhoto);
 $("#header").append(formattedWelcomeMsg);
 
 $("#header").append(HTMLContacts);
-$("#topContacts").append(formattedMobile);	
+$("#topContacts").append(formattedSkype);	
 $("#topContacts").append(formattedEmail);	
 $("#topContacts").append(formattedGithub);	
 $("#topContacts").append(formattedLinkedin);	
@@ -177,7 +178,7 @@ projects.display = function() {
 		$("#projects").append(HTMLprojectStart);
 	for(proj in projects.projects) {
 
-		var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[proj].title);
+		var formattedTitle = HTMLprojectTitle.replace("%data%", "<a href=\""+ projects.projects[proj].link + "\" target=\"_bkank\">" + projects.projects[proj].title + "</a>");
 		$(".project-entry:last").append(formattedTitle);
 
 		var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[proj].dates);
