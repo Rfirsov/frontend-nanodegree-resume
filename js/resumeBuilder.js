@@ -48,8 +48,8 @@ var work = {
 	{
 		"employer": "hospital",
 		"title": "system administrator",
-		"dates": "feb 2016 - oct 2016",
-		"description": "I am  install and upgrade computer components and software."
+		"dates": "feb 2016 - nov 2016",
+		"description": "I install and upgrade computer components and software."
 	}]
 }
 
