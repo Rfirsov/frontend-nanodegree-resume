@@ -113,18 +113,18 @@ var work = {
 var projects = {
 	"projects": [
 	{
-		"title": "Acnostria site",
+		"title": "Acnostia site",
 		"dates": "2016",
 		"description": "HTML, CSS, jQuery, Google Maps API",
-		"images": "images/acnostria-site.jpg",
-		"link": "http://e-buy.16mb.com/projects"
+		"images": "images/acnostia-site.jpg",
+		"link": "http://e-buy.16mb.com/projects/acnostia"
 	},
 	{
 		"title": "Minima site",
 		"dates": "2017",
 		"description": "HTML, CSS",
 		"images": "images/minima-site.jpg",
-		"link": "http://e-buy.16mb.com/projects"
+		"link": "http://e-buy.16mb.com/projects/minima"
 	}
 	]
 }
