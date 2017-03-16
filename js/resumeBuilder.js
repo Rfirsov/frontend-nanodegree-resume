@@ -9,7 +9,7 @@ var bio = {
 		"location": "Kryvyi Rih, Ukraine"
 	},
 	"welcomeMessage": "Hello, I want to be a programmer",
-	"skills": ["HTML", "CSS", "Javascript", "jQuery", "Git"],
+	"skills": ["HTML", "CSS", "Javascript", "jQuery", "Git", "npm", "ReactJS"],
 	"biopic": "images/bio.jpg"
 }
 
@@ -18,27 +18,75 @@ var education = {
 	{
 		"name": "Kryvyi Rih National University",
 		"city": "Kryvyi Rih",
-		"degree": "BA",
-		"majors": ["Comp sciense"],
+		"degree": "Bachelor of Science in Computer Science",
+		"majors": ["Informatics"],
 		"dates": 2014,
 		"url": "http://kdpu.edu.ua"
 	},
 	{
 		"name": "Kryvyi Rih National University",
 		"city": "Kryvyi Rih",
-		"degree": "Masters",
-		"majors": ["Comp sciense"],
+		"degree": "Master of Science in Computer Science",
+		"majors": ["Informatics"],
 		"dates": 2015,
 		"url": "http://kdpu.edu.ua"
 	}
 	],
 
 	"onlineCourses": [
-	{
-		"title": "Javascript",
+		{
+		"title": "jQuery",
 		"school": "Udacity",
 		"dates": "2016",
 		"url": "http://udacity.com"
+		},
+		{
+		"title": "Object-Oriented JavaScript",
+		"school": "Udacity",
+		"dates": "2016",
+		"url": "http://udacity.com"
+		},
+		{
+		"title": "Javascript",
+		"school": "Codecademy",
+		"dates": "2016",
+		"url": "https://www.codecademy.com/Painkiller00"
+		},
+		{
+		"title": "HTML & CSS",
+		"school": "Codecademy",
+		"dates": "2016",
+		"url": "https://www.codecademy.com/Painkiller00"
+		},
+		{
+		"title": "jQuery",
+		"school": "Codecademy",
+		"dates": "2016",
+		"url": "https://www.codecademy.com/Painkiller00"
+		},
+		{
+		"title": "Sass",
+		"school": "Codecademy",
+		"dates": "2016",
+		"url": "https://www.codecademy.com/Painkiller00"
+		},
+		{
+		"title": "PHP",
+		"school": "Codecademy",
+		"dates": "2016",
+		"url": "https://www.codecademy.com/Painkiller00"
+		},
+		{
+		"title": "ReactJS",
+		"school": "Codecademy",
+		"dates": "2016",
+		"url": "https://www.codecademy.com/Painkiller00"
+		},
+		{
+		"title": "Git",
+		"school": "Codecademy",
+		"dates": "2016",
+		"url": "https://www.codecademy.com/Painkiller00"
 		}
 	]
 }
@@ -46,11 +94,20 @@ var education = {
 var work = {
 	"jobs": [
 	{
-		"employer": "hospital",
+		"employer": "COMMUNAL INSTITUTION «Center of Primary Medical Care»",
 		"title": "system administrator",
-		"dates": "feb 2016 - nov 2016",
+		"dates": "feb 2016 - oct 2016",
+		"location": "Apostolove, Ukraine",
 		"description": "I install and upgrade computer components and software."
-	}]
+	},
+	{
+		"employer": "ELECTION COMMISSION",
+		"title": "system administrator",
+		"dates": "sept – nov 2015",
+		"location": "Apostolove, Ukraine",
+		"description": "I install and upgrade computer components and software."
+	}
+	]
 }
 
 var projects = {
@@ -58,11 +115,18 @@ var projects = {
 	{
 		"title": "Acnostria site",
 		"dates": "2016",
-		"description": "",
+		"description": "HTML, CSS, jQuery, Google Maps API",
 		"images": "images/acnostria-site.jpg",
 		"link": "http://e-buy.16mb.com/projects"
-
-	}]
+	},
+	{
+		"title": "Minima site",
+		"dates": "2017",
+		"description": "HTML, CSS",
+		"images": "images/minima-site.jpg",
+		"link": "http://e-buy.16mb.com/projects"
+	}
+	]
 }
 
 bio.display = function () {
@@ -82,15 +146,18 @@ $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
 //contacts
 $("#header").append(formattedPhoto);
-$("#header").append(formattedWelcomeMsg);
 
-$("#header").append(HTMLContacts);
 $("#topContacts").append(formattedSkype);	
 $("#topContacts").append(formattedEmail);	
 $("#topContacts").append(formattedGithub);	
 $("#topContacts").append(formattedLinkedin);	
 $("#topContacts").append(formattedLocation);
 
+$("#footerContacts").append(formattedSkype);
+$("#footerContacts").append(formattedEmail);
+$("#footerContacts").append(formattedGithub);
+$("#footerContacts").append(formattedLinkedin);
+$("#footerContacts").append(formattedLocation);
 
 
 if(bio.skills.length > 0) {
@@ -117,6 +184,8 @@ for(job in work.jobs) {
 
 	var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
 	$(".work-entry:last").append(formattedDates);
+	var formattedWorkLoc = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+	$(".work-entry:last").append(formattedWorkLoc);
 	var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
 	$(".work-entry:last").append(formattedDescription);
 }
